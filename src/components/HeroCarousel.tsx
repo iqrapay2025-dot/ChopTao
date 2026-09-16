@@ -82,29 +82,30 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
 
       {/* Content */}
-      <div
-        className="relative z-20 min-h-0 h-full flex flex-col justify-center md:justify-end pt-8 pb-16 md:pb-24 px-6 translate-y-0 md:translate-y-0"
-        style={{ opacity: fading ? 0 : 1, transition: "opacity 0.35s ease" }}
-      >
+      <div className="relative z-20 min-h-0 h-full flex flex-col justify-center md:justify-end pt-8 pb-16 md:pb-24 px-6 translate-y-0 md:translate-y-0">
         <div className="max-w-6xl mx-auto w-full">
           <div className="max-w-3xl flex flex-col items-start text-left">
-            {/* Tagline pill */}
             <div className={`inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 ${active === 0 ? "mb-4" : "mb-5"}`}>
               <span className="w-1.5 h-1.5 rounded-full bg-blush" />
               <span className="text-white/90 text-xs font-semibold tracking-wide uppercase">Taaooma"s Kitchen</span>
             </div>
 
-            <h1
-              className={`${active === 0 ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"} font-black text-white leading-[1.08] mb-4`}
-              style={{ fontFamily: '"Nunito", sans-serif' }}
+            <div
+              className="transition-opacity duration-350 ease-out"
+              style={{ opacity: fading ? 0 : 1 }}
             >
-              {slide.headline}{" "}
-              <span style={{ color: "#f3d9d6" }}>{slide.accent}</span>
-            </h1>
+              <h1
+                className={`${active === 0 ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"} font-black text-white leading-[1.08] mb-4`}
+                style={{ fontFamily: '"Nunito", sans-serif' }}
+              >
+                {slide.headline}{" "}
+                <span style={{ color: "#f3d9d6" }}>{slide.accent}</span>
+              </h1>
 
-            <p className={`text-white/75 text-base md:text-lg ${active === 0 ? "mb-6" : "mb-8"} max-w-md leading-relaxed`}>
-              {slide.sub}
-            </p>
+              <p className={`text-white/75 text-base md:text-lg ${active === 0 ? "mb-6" : "mb-8"} max-w-md leading-relaxed`}>
+                {slide.sub}
+              </p>
+            </div>
 
             <div className={`flex flex-wrap justify-start gap-3 ${active === 0 ? "mb-7" : "mb-10"}`}>
               <Link to="/order" className="btn btn-maroon">
