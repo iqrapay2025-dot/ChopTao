@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`relative z-50 transition-all duration-300 ${
         transparent
           ? "bg-transparent"
           : "bg-offwhite/96 backdrop-blur-md shadow-sm border-b border-blush/30"

@@ -128,7 +128,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
           <p>&copy; {new Date().getFullYear()} ChopTao. All rights reserved.</p>
-          <p>Made with love by Taaooma</p>
+          {/* <p>Made with love by Taaooma</p> */}
         </div>
       </div>
     </footer>

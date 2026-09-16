@@ -13,7 +13,7 @@ const slides = [
     image: "https://images.unsplash.com/photo-1747008624832-e068ee496908?w=1600&h=900&fit=crop&auto=format",
     alt: "Crispy samosas artfully displayed with dipping sauce",
     headline: "Every Bite Tells",
-    accent: "A Story",
+        accent: "A Story",
     sub: "Handcrafted small chops made with premium ingredients and a whole lot of passion.",
   },
   {
@@ -60,7 +60,7 @@ export default function HeroCarousel() {
   const slide = slides[active];
 
   return (
-    <section className="relative h-[calc(100svh-4.5rem)] min-h-[560px] overflow-hidden" aria-label="Hero carousel">
+    <section className="relative min-h-[540px] md:h-[calc(100svh-4.5rem)] md:min-h-[560px] overflow-hidden" aria-label="Hero carousel">
       {/* Background images */}
       {slides.map((s, i) => (
         <div
@@ -83,30 +83,30 @@ export default function HeroCarousel() {
 
       {/* Content */}
       <div
-        className="relative z-20 h-full flex flex-col justify-center pt-8 pb-12 md:justify-end md:pt-0 md:pb-24 px-6"
+        className="relative z-20 min-h-0 md:h-full md:min-h-0 flex flex-col justify-center md:justify-end pt-8 pb-16 md:pb-24 px-6 translate-y-6 md:translate-y-0"
         style={{ opacity: fading ? 0 : 1, transition: "opacity 0.35s ease" }}
       >
         <div className="max-w-6xl mx-auto w-full">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl flex flex-col items-start text-left">
             {/* Tagline pill */}
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 mb-5">
+            <div className={`inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-1.5 ${active === 0 ? "mb-4" : "mb-5"}`}>
               <span className="w-1.5 h-1.5 rounded-full bg-blush" />
               <span className="text-white/90 text-xs font-semibold tracking-wide uppercase">Taaooma"s Kitchen</span>
             </div>
 
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-4"
+              className={`${active === 0 ? "text-3xl sm:text-4xl md:text-5xl lg:text-6xl" : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"} font-black text-white leading-[1.08] mb-4`}
               style={{ fontFamily: '"Nunito", sans-serif' }}
             >
               {slide.headline}{" "}
               <span style={{ color: "#f3d9d6" }}>{slide.accent}</span>
             </h1>
 
-            <p className="text-white/75 text-base md:text-lg mb-8 max-w-md leading-relaxed">
+            <p className={`text-white/75 text-base md:text-lg ${active === 0 ? "mb-6" : "mb-8"} max-w-md leading-relaxed`}>
               {slide.sub}
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className={`flex flex-wrap justify-start gap-3 ${active === 0 ? "mb-7" : "mb-10"}`}>
               <Link to="/order" className="btn btn-maroon">
                 Order Now
               </Link>
@@ -116,7 +116,7 @@ export default function HeroCarousel() {
             </div>
 
             {/* Social proof */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-start gap-3">
               <div className="flex -space-x-2.5">
                 {AVATARS.map((src, i) => (
                   <img

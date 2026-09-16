@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import contactImage from "@/imports/contact.jpg";
 
 function IconMail() {
   return (
@@ -37,7 +38,7 @@ function IconWhatsapp() {
 
 const CONTACT_INFO = [
   { icon: <IconMail />, label: "Email", value: "hello@choptao.com", href: "mailto:hello@choptao.com" },
-  { icon: <IconPhone />, label: "Phone", value: "+234 800 000 0000", href: "tel:+2348000000000" },
+  { icon: <IconPhone />, label: "Phone", value: "+234 815 595 6187", href: "tel:+2348155956187" },
   { icon: <IconWhatsapp />, label: "WhatsApp", value: "Order via WhatsApp", href: "https://wa.me/2348155956187" },
   { icon: <IconMap />, label: "Location", value: "Lagos, Nigeria", href: undefined },
 ];
@@ -56,18 +57,22 @@ export default function Contact() {
     <>
       {/* Hero */}
       <section
-        className="pt-32 pb-16 px-4 text-center"
-        style={{ background: "linear-gradient(160deg, #f3d9d6 0%, #ffffff 65%)" }}
+        className="relative pt-32 pb-16 px-4 text-center overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(135deg, rgba(92, 42, 45, 0.88), rgba(43, 35, 32, 0.55)), url(${contactImage})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
       >
         <div className="max-w-xl mx-auto">
-          <p className="text-maroon text-xs font-bold uppercase tracking-widest mb-3">We Would Love to Hear From You</p>
+          <p className="text-white/75 text-xs font-bold uppercase tracking-widest mb-3">We Would Love to Hear From You</p>
           <h1
-            className="text-5xl font-black text-charcoal mb-4"
+            className="text-5xl font-black text-white mb-4"
             style={{ fontFamily: '"Nunito", sans-serif' }}
           >
             Get in Touch
           </h1>
-          <p className="text-charcoal/55 text-sm leading-relaxed">
+          <p className="text-white/80 text-sm leading-relaxed">
             Have questions? Want to discuss an event? We are always happy to chat — reach out via any of the channels below.
           </p>
         </div>

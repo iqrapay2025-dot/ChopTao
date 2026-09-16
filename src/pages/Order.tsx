@@ -426,7 +426,7 @@ export default function Order() {
                 >
                   {[
                     { id: "name",  label: "Full Name",    type: "text",  placeholder: "Amara Johnson" },
-                    { id: "phone", label: "Phone Number", type: "tel",   placeholder: "+234 800 000 0000" },
+                    { id: "phone", label: "Phone Number", type: "tel",   placeholder: "+234 815 595 6187" },
                     { id: "email", label: "Email Address",type: "email", placeholder: "amara@email.com" },
                   ].map((field) => (
                     <div key={field.id}>
