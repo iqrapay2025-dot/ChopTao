@@ -60,7 +60,7 @@ export default function HeroCarousel() {
   const slide = slides[active];
 
   return (
-    <section className="relative min-h-[540px] md:h-[calc(100svh-4.5rem)] md:min-h-[560px] overflow-hidden" aria-label="Hero carousel">
+    <section className="relative h-[80dvh] min-h-[540px] md:h-[calc(100svh-4.5rem)] md:min-h-[560px] overflow-hidden" aria-label="Hero carousel">
       {/* Background images */}
       {slides.map((s, i) => (
         <div
@@ -83,7 +83,7 @@ export default function HeroCarousel() {
 
       {/* Content */}
       <div
-        className="relative z-20 min-h-0 md:h-full md:min-h-0 flex flex-col justify-center md:justify-end pt-8 pb-16 md:pb-24 px-6 translate-y-6 md:translate-y-0"
+        className="relative z-20 min-h-0 h-full flex flex-col justify-center md:justify-end pt-8 pb-16 md:pb-24 px-6 translate-y-0 md:translate-y-0"
         style={{ opacity: fading ? 0 : 1, transition: "opacity 0.35s ease" }}
       >
         <div className="max-w-6xl mx-auto w-full">
